@@ -84,6 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "due_date TEXT," +
                 "due_odometer INTEGER," +
                 "is_done INTEGER DEFAULT 0," +
+                "completed_date TEXT," +
                 "created_at TEXT)");
 
         // PMS Tasks table
