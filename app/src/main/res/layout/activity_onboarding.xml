@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <TextView android:id="@+id/tvEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🚗"
+        android:textSize="80sp"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track Everything"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_dark"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView android:id="@+id/tvSubtitle"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Log expenses, fuel, maintenance all in one place"
+        android:textSize="16sp"
+        android:textColor="@color/gray_medium"
+        android:gravity="center"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Dots -->
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp">
+        <View android:id="@+id/dot1"
+            android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/circle_bg"
+            android:layout_marginEnd="6dp"/>
+        <View android:id="@+id/dot2"
+            android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/circle_bg"
+            android:layout_marginEnd="6dp"/>
+        <View android:id="@+id/dot3"
+            android:layout_width="10dp" android:layout_height="10dp"
+            android:background="@drawable/circle_bg"/>
+    </LinearLayout>
+
+    <Button android:id="@+id/btnNext"
+        android:layout_width="240dp"
+        android:layout_height="52dp"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button_blue"/>
+
+</LinearLayout>

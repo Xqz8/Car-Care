@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cnsc.carcare">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CarCare">
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AddExpenseActivity"
+            android:label="Add Expense"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CarCare">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".OnboardingActivity" android:exported="false"/>
+        <activity android:name=".LoginActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".RegisterActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".AddVehicleActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".PmsConfirmActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".AddFuelActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ReminderActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".HistoryActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".AnalyticsActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".VehicleManagementActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".SettingsActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ExpenseDetailActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+
+
+
+    </application>
+
+</manifest>

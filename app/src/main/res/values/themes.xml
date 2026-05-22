@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.CarCare" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+        <item name="colorAccent">@color/blue_light</item>
+        <item name="android:windowBackground">@color/gray_light</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+</resources>

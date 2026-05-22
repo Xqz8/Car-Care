@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CarCare</string>
+    <string-array name="expense_categories">
+        <item>Fuel</item>
+        <item>Maintenance</item>
+        <item>Repair</item>
+        <item>Insurance</item>
+        <item>Registration</item>
+        <item>Car Wash</item>
+        <item>Accessories</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="vehicle_types">
+        <item>Car</item>
+        <item>SUV/AUV</item>
+        <item>Motorcycle</item>
+        <item>Truck</item>
+        <item>Van</item>
+    </string-array>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_header"
+            android:padding="16dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="24dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:contentDescription="Back" />
+
+            <TextView android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🚗 My Vehicles"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <Button android:id="@+id/btnAddVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="+ Add"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button_outline"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp">
+            <LinearLayout android:id="@+id/layoutVehicles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"/>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/white"
+        app:fabCradleMargin="8dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+            <LinearLayout android:id="@+id/btnNavHome"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical"
+                android:clickable="true" android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_today"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Home" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/btnNavHistory"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical"
+                android:clickable="true" android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="History" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <View android:layout_width="0dp" android:layout_height="20dp" android:layout_weight="1"/>
+
+            <LinearLayout android:id="@+id/btnNavReminders"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical"
+                android:clickable="true" android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Maintenance" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/btnNavVehicles"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical"
+                android:clickable="true" android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_directions"
+                    app:tint="#FFD54F"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Garage" android:textColor="#FFD54F" android:textSize="10sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnNavAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_anchor="@id/bottomAppBar"
+        app:backgroundTint="#FFD54F"
+        app:tint="@color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

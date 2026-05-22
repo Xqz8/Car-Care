@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_light">
+
+    <!-- Header (fixed, does NOT scroll) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="140dp"
+        android:background="@drawable/gradient_header"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back"
+            android:padding="8dp"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚗"
+                android:textSize="52sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Your Vehicle"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Scrollable form (shrinks when keyboard appears) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <EditText
+                    android:id="@+id/etVehicleName"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Vehicle Nickname"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginBottom="14dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+                <Spinner
+                    android:id="@+id/spinnerType"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginBottom="14dp"
+                    android:entries="@array/vehicle_types"/>
+
+                <EditText
+                    android:id="@+id/etBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Brand (e.g. Honda, Toyota)"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginBottom="14dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/etModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Model (e.g. Civic, Vios)"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginBottom="14dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/etYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Manufacturing Year"
+                    android:background="@drawable/rounded_edittext"
+                    android:inputType="number"
+                    android:layout_marginBottom="14dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/etPlate"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Plate Number"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginBottom="14dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/etOdometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Current Odometer (km)"
+                    android:background="@drawable/rounded_edittext"
+                    android:inputType="number"
+                    android:layout_marginBottom="24dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"/>
+
+                <Button
+                    android:id="@+id/btnSaveVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Save Vehicle"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rounded_button_blue"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</LinearLayout>

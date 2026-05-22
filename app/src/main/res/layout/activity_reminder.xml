@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_header"
+            android:padding="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔧 Maintenance"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- ── FILTER CHIPS ── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/filterAll"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="All"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_button_blue"
+                        android:layout_marginEnd="6dp"/>
+
+                    <TextView
+                        android:id="@+id/filterPMS"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="PMS"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_dark"
+                        android:background="@drawable/rounded_button_outline"
+                        android:layout_marginEnd="6dp"/>
+
+                    <TextView
+                        android:id="@+id/filterCustom"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Custom"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_dark"
+                        android:background="@drawable/rounded_button_outline"/>
+                </LinearLayout>
+
+                <!-- ── UNIFIED TASK LIST ── -->
+                <LinearLayout
+                    android:id="@+id/layoutPMS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- ── ADD CUSTOM MAINTENANCE TASK SECTION ── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📋 Add Custom Task"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue_dark"
+                    android:layout_marginBottom="12dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Custom Maintenance Task"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue_dark"
+                            android:layout_marginBottom="16dp"/>
+
+                        <EditText
+                            android:id="@+id/etReminderType"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:hint="Type (e.g. Oil Change)"
+                            android:background="@drawable/rounded_edittext"
+                            android:layout_marginBottom="12dp"
+                            android:paddingLeft="15dp"/>
+
+                        <EditText
+                            android:id="@+id/etReminderNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:hint="Notes (optional)"
+                            android:background="@drawable/rounded_edittext"
+                            android:layout_marginBottom="12dp"
+                            android:paddingLeft="15dp"/>
+
+                        <EditText
+                            android:id="@+id/etDueDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:hint="Due Date"
+                            android:background="@drawable/rounded_edittext"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:layout_marginBottom="12dp"
+                            android:paddingLeft="15dp"/>
+
+                        <EditText
+                            android:id="@+id/etDueOdometer"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:hint="Due at odometer (km)"
+                            android:background="@drawable/rounded_edittext"
+                            android:inputType="number"
+                            android:layout_marginBottom="16dp"
+                            android:paddingLeft="15dp"/>
+
+                        <Button
+                            android:id="@+id/btnAddReminder"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:text="ADD MAINTENANCE TASK"
+                            android:textColor="@color/white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="@drawable/rounded_button_blue"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- layoutReminders kept as hidden anchor for compat, not shown -->
+                <LinearLayout
+                    android:id="@+id/layoutReminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/white"
+        app:fabCradleMargin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/btnNavHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_today"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Home" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNavHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="History" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <View android:layout_width="0dp" android:layout_height="20dp" android:layout_weight="1"/>
+
+            <LinearLayout
+                android:id="@+id/btnNavReminders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    app:tint="#FFD54F"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Maintenance" android:textColor="#FFD54F" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNavVehicles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_directions"
+                    app:tint="@color/nav_inactive"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Garage" android:textColor="@color/nav_inactive" android:textSize="10sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnNavAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_anchor="@id/bottomAppBar"
+        app:backgroundTint="#FFD54F"
+        app:tint="@color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
